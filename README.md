@@ -21,37 +21,61 @@ YOLOv5 is a state-of-the-art object detection model that provides excellent accu
    cd your-repo-name
 
 2. Install the requirements
-```bash
-pip install -r requirements.txt
+   ```bash
+   pip install -r requirements.txt
 
 3. Preparing the Custom Dataset
-data/
-├── my_custom_dataset/
-│   ├── images/
-│   │   ├── train/
-│   │   │   ├── img1.jpg
-│   │   │   ├── img2.jpg
-│   │   │   └── ...
-│   │   ├── val/
-│   │   │   ├── img1.jpg
-│   │   │   ├── img2.jpg
-│   │   │   └── ...
-│   │   ├── test/
-│   │   │   ├── img1.jpg
-│   │   │   ├── img2.jpg
-│   │   │   └── ...
-│   ├── labels/
-│   │   ├── train/
-│   │   │   ├── img1.txt
-│   │   │   ├── img2.txt
-│   │   │   └── ...
-│   │   ├── val/
-│   │   │   ├── img1.txt
-│   │   │   ├── img2.txt
-│   │   │   └── ...
-│   │   ├── test/
-│   │   │   ├── img1.txt
-│   │   │   ├── img2.txt
-│   │   │   └── ...
+   ```bash
+   data/
+   ├── my_custom_dataset/
+   │   ├── images/
+   │   │   ├── train/
+   │   │   │   ├── img1.jpg
+   │   │   │   ├── img2.jpg
+   │   │   │   └── ...
+   │   │   ├── val/
+   │   │   │   ├── img1.jpg
+   │   │   │   ├── img2.jpg
+   │   │   │   └── ...
+   │   │   ├── test/
+   │   │   │   ├── img1.jpg
+   │   │   │   ├── img2.jpg
+   │   │   │   └── ...
+   │   ├── labels/
+   │   │   ├── train/
+   │   │   │   ├── img1.txt
+   │   │   │   ├── img2.txt
+   │   │   │   └── ...
+   │   │   ├── val/
+   │   │   │   ├── img1.txt
+   │   │   │   ├── img2.txt
+   │   │   │   └── ...
+   │   │   ├── test/
+   │   │   │   ├── img1.txt
+   │   │   │   ├── img2.txt
+   │   │   │   └── ...
 
-4. Create a dataset configuration file my_custom_dataset.yaml
+5. Create a dataset configuration file my_custom_dataset.yaml
+   ```bash
+   train: data/my_custom_dataset/images/train
+   val: data/my_custom_dataset/images/val
+   test: data/my_custom_dataset/images/test
+   
+   nc: 2  # number of classes
+   names: ['class1', 'class2']  # list of class names
+
+7. Training Model
+   To train YOLOv5 on your custom dataset, run:
+   ```bash
+   python train.py --img 640 --batch 16 --epochs 100 --data data/my_custom_dataset.yaml --weights yolov5s.pt
+9. Testing Model
+    To evaluate the trained model on the test set, run:
+   ```bash
+   python val.py --data data/my_custom_dataset.yaml --weights runs/train/exp/weights/best.pt --img 640 --task test
+
+10. Results
+The training and evaluation results, including loss curves and other metrics, can be found in the runs/ directory.
+
+
+#### Acknowledgements
+The original YOLOv5 repository: [Ultralytics YOLOv5](https://github.com/ultralytics/yolov5)
