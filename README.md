@@ -78,5 +78,4 @@ The training and evaluation results, including loss curves and other metrics, ca
 
 
 #### Acknowledgements
-The original YOLOv5 repository: [Ultralytics YOLOv5]
-Thank you to the Ultralytics team for their excellent work on YOLOv5.
+The original YOLOv5 repository: [Ultralytics YOLOv5](https://github.com/ultralytics/yolov5)
