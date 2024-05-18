@@ -19,3 +19,39 @@ YOLOv5 is a state-of-the-art object detection model that provides excellent accu
    ```bash
    git clone https://github.com/your-username/YOLOV5CustomDataset.git
    cd your-repo-name
+
+2. Install the requirements
+```bash
+pip install -r requirements.txt
+
+3. Preparing the Custom Dataset
+data/
+├── my_custom_dataset/
+│   ├── images/
+│   │   ├── train/
+│   │   │   ├── img1.jpg
+│   │   │   ├── img2.jpg
+│   │   │   └── ...
+│   │   ├── val/
+│   │   │   ├── img1.jpg
+│   │   │   ├── img2.jpg
+│   │   │   └── ...
+│   │   ├── test/
+│   │   │   ├── img1.jpg
+│   │   │   ├── img2.jpg
+│   │   │   └── ...
+│   ├── labels/
+│   │   ├── train/
+│   │   │   ├── img1.txt
+│   │   │   ├── img2.txt
+│   │   │   └── ...
+│   │   ├── val/
+│   │   │   ├── img1.txt
+│   │   │   ├── img2.txt
+│   │   │   └── ...
+│   │   ├── test/
+│   │   │   ├── img1.txt
+│   │   │   ├── img2.txt
+│   │   │   └── ...
+
+4. Create a dataset configuration file my_custom_dataset.yaml
