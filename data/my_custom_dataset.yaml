@@ -1,0 +1,6 @@
+train: data/my_custom_dataset/images/train
+val: data/my_custom_dataset/images/val
+test: data/my_custom_dataset/images/test
+
+nc: 5  # number of classes
+names: ['Healthy', 'Doubtful','Minimal','Moderate','Severe']  
